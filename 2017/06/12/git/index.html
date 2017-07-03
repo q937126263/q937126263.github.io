@@ -15,17 +15,17 @@
     <meta name="keywords" content="记录," />
   
 
-  <meta name="description" content="*{        padding:0;        margin:0;    }    1.安装git 2.安装Node.js bash: nmp: command not found 此命令代表没有安装或者未生效 3.安装hexo  $ npm install hexo-cli -g  鼠标右键任意地方，选择Git Bash，使用命令安装hexo  $ npm ins">
+  <meta name="description" content="1.安装git  2.安装Node.js  bash: nmp: command not found 此命令代表没有安装或者未生效  3.安装hexo  $ npm install hexo-cli -g  鼠标右键任意地方，选择Git Bash，使用命令安装hexo  $ npm install hexo-deployer-git –save 继续运行此命令  接下来创建放置博客文件的文件夹：">
 <meta name="keywords" content="记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git和GitHub的使用">
 <meta property="og:url" content="http://www.qiaomc.cn/2017/06/12/git/index.html">
 <meta property="og:site_name" content="QiaO's Blog">
-<meta property="og:description" content="*{        padding:0;        margin:0;    }    1.安装git 2.安装Node.js bash: nmp: command not found 此命令代表没有安装或者未生效 3.安装hexo  $ npm install hexo-cli -g  鼠标右键任意地方，选择Git Bash，使用命令安装hexo  $ npm ins">
-<meta property="og:updated_time" content="2017-07-03T02:39:12.064Z">
+<meta property="og:description" content="1.安装git  2.安装Node.js  bash: nmp: command not found 此命令代表没有安装或者未生效  3.安装hexo  $ npm install hexo-cli -g  鼠标右键任意地方，选择Git Bash，使用命令安装hexo  $ npm install hexo-deployer-git –save 继续运行此命令  接下来创建放置博客文件的文件夹：">
+<meta property="og:updated_time" content="2017-07-03T03:11:55.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git和GitHub的使用">
-<meta name="twitter:description" content="*{        padding:0;        margin:0;    }    1.安装git 2.安装Node.js bash: nmp: command not found 此命令代表没有安装或者未生效 3.安装hexo  $ npm install hexo-cli -g  鼠标右键任意地方，选择Git Bash，使用命令安装hexo  $ npm ins">
+<meta name="twitter:description" content="1.安装git  2.安装Node.js  bash: nmp: command not found 此命令代表没有安装或者未生效  3.安装hexo  $ npm install hexo-cli -g  鼠标右键任意地方，选择Git Bash，使用命令安装hexo  $ npm install hexo-deployer-git –save 继续运行此命令  接下来创建放置博客文件的文件夹：">
 
   
 
@@ -221,7 +221,26 @@
 
   <div class="article-content">
     
-      <html><br><head><br>    <title></title><br>    <style type="text/css"><br>    *{<br>        padding:0;<br>        margin:0;<br>    }<br><br>    </style><br></head><br><body><br><h1>1.安装<a href="https://pan.baidu.com/s/1miqAjlY" target="_blank" rel="external">git</a> </h1><br><h1>2.安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></h1><br><pre> bash: nmp: command not found 此命令代表没有安装或者未生效 </pre><br><h1>3.安装hexo</h1><br>  <pre>$ npm install hexo-cli -g  鼠标右键任意地方，选择Git Bash，使用命令安装hexo</pre><br>  <pre>$ npm install hexo-deployer-git –save 继续运行此命令</pre><br>  接下来创建放置博客文件的文件夹：blog文件夹。在自己想要的位置创建文件夹，名字和地方可以自由选择，当然最好不要放在中文路径下，之后进入文件夹，比如H:\blog内，点击鼠标右键，选择GitBash，执行以下命令<br>  <pre>$ hexo init   自动在该文件夹下下载搭建网站所需的所有文件</pre><br>  <pre>$ npm install 安装依赖包</pre><br>  <pre>$ hexo g 生成静态文件<br>$ hexo s 启动服务器本地预览</pre><br><h1>4.注册github账号</h1><br><h1>5.创建github仓库</h1><br><h1>6.将本地文件上传到github</h1><br> 编辑目录中的_config.yml文件，在最下方，添加如下配置，hexo的配置文件中任何’:’后面都是带一个空格的,如果配置以下命令出现ERROR Deployer not found : github，则缺少空格。（注：第一个参数为你自己的github用户名，第二个参数为创建的库的名称，giyhub仓库的后缀是一样的)<br>  <pre>deploy:<br>      type: git<br>      repository: http:&frasl;&frasl;github.com&frasl;github用户名&frasl;github库名.github.io.git<br>      branch: master</pre><br> 配置好_config.yml并保存后，执行命令部署到Github上。如果你是第一次使用Github或者是已经使用过，但没有配置过SSH，则可能需要配置一下(NO.7详细步骤)<br> <pre>$ hexo g<br>$ hexo d</pre><br>执行上面的第二个命令，可能会要你输入用户名和密码，皆为注册Github时的数据，输入密码是不显示任何东西的，输入完毕回车即可。<br>此时，我们的博客已经搭建起来，并发布到Github上了<br><br><h1>7.创建SSH</h1><br><br>鼠标右键任意地方，选择Git Bash,输入此命令<br><pre>$ ssh-keygen -t rsa -C “your_email@youremail.com” </pre><br>默认的一路回车，成功的话会在C:\Users\Administrator下生成.ssh文件夹，进入该文件夹，以文本的形式打开id_rsa.pub，复制里面的key，即复制文件的全部内容。如果你在这边只看见2个id_rsa文件，没看到id_rsa.pub，应该是你把后缀名隐藏了，可以设置显示后缀，或者直接把两个文件都以文本的形式打开，内容短的并且以ssh-rsa开头的即为所需的SSH key。<br>回到github，进入Settings，选择SSH and GPG Keys -&gt; New SSH Key，title随便填，粘贴key。为了验证是否成功，在git bash下输入：<br><pre>$ ssh -T git@github.com</pre><br>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated， but GitHub does not provide shell access ，这就表示已成功连上github。<br>接下来我们要做的就是把本地仓库传到github上去，但在此之前还需要设置username和email，因为github每次commit都会记录他们。<br><pre>$ git config –global user.name “your name”<br>$ git config –global user.email “your_email@youremail.com”</pre><br>设置完后，使用hexo d命令发布内容就不需要再输入密码了。<br><br><br>blog的配置文件<br>整个博客的配置文件H:&frasl;blog&frasl;_config.yml<br>主题的配置文件H:&frasl;blog&frasl;themes&frasl;light&frasl;_config.yml(可以安装自己喜欢的主题)<br></body><br></html>
+      <!-- <html>
+<head>
+    <title></title>
+    <style type="text/css">
+    </style>
+</head>
+<body> -->
+<p></p><h1>1.安装<a href="https://pan.baidu.com/s/1miqAjlY" target="_blank" rel="external">git</a> </h1><p></p>
+<p></p><h1>2.安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></h1><p></p>
+<p><pre> bash: nmp: command not found 此命令代表没有安装或者未生效 </pre></p>
+<p></p><h1>3.安装hexo</h1><br>  <pre>$ npm install hexo-cli -g  鼠标右键任意地方，选择Git Bash，使用命令安装hexo</pre><br>  <pre>$ npm install hexo-deployer-git –save 继续运行此命令</pre><br>  接下来创建放置博客文件的文件夹：blog文件夹。在自己想要的位置创建文件夹，名字和地方可以自由选择，当然最好不要放在中文路径下，之后进入文件夹，比如H:\blog内，点击鼠标右键，选择GitBash，执行以下命令<br>  <pre>$ hexo init   自动在该文件夹下下载搭建网站所需的所有文件</pre><br>  <pre>$ npm install 安装依赖包</pre><br>  <pre>$ hexo g 生成静态文件<br>$ hexo s 启动服务器本地预览</pre><p></p>
+<p></p><h1>4.注册github账号</h1><p></p>
+<p></p><h1>5.创建github仓库</h1><p></p>
+<p></p><h1>6.将本地文件上传到github</h1><br> 编辑目录中的_config.yml文件，在最下方，添加如下配置，hexo的配置文件中任何’:’后面都是带一个空格的,如果配置以下命令出现ERROR Deployer not found : github，则缺少空格。（注：第一个参数为你自己的github用户名，第二个参数为创建的库的名称，giyhub仓库的后缀是一样的)<br>  <pre>deploy:<br>      type: git<br>      repository: http:&frasl;&frasl;github.com&frasl;github用户名&frasl;github库名.github.io.git<br>      branch: master</pre><br> 配置好_config.yml并保存后，执行命令部署到Github上。如果你是第一次使用Github或者是已经使用过，但没有配置过SSH，则可能需要配置一下(NO.7详细步骤)<br> <pre>$ hexo g<br>$ hexo d</pre><br>执行上面的第二个命令，可能会要你输入用户名和密码，皆为注册Github时的数据，输入密码是不显示任何东西的，输入完毕回车即可。<br>此时，我们的博客已经搭建起来，并发布到Github上了<br><p></p>
+<p></p><h1>7.创建SSH</h1><br><br>鼠标右键任意地方，选择Git Bash,输入此命令<p></p>
+<p><pre>$ ssh-keygen -t rsa -C “your_email@youremail.com” </pre><br>默认的一路回车，成功的话会在C:\Users\Administrator下生成.ssh文件夹，进入该文件夹，以文本的形式打开id_rsa.pub，复制里面的key，即复制文件的全部内容。如果你在这边只看见2个id_rsa文件，没看到id_rsa.pub，应该是你把后缀名隐藏了，可以设置显示后缀，或者直接把两个文件都以文本的形式打开，内容短的并且以ssh-rsa开头的即为所需的SSH key。<br>回到github，进入Settings，选择SSH and GPG Keys -&gt; New SSH Key，title随便填，粘贴key。为了验证是否成功，在git bash下输入：</p>
+<p><pre>$ ssh -T git@github.com</pre><br>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated， but GitHub does not provide shell access ，这就表示已成功连上github。<br>接下来我们要做的就是把本地仓库传到github上去，但在此之前还需要设置username和email，因为github每次commit都会记录他们。</p>
+<p><pre>$ git config –global user.name “your name”<br>$ git config –global user.email “your_email@youremail.com”</pre><br>设置完后，使用hexo d命令发布内容就不需要再输入密码了。</p>
+<p>blog的配置文件<br>整个博客的配置文件H:&frasl;blog&frasl;_config.yml<br>主题的配置文件H:&frasl;blog&frasl;themes&frasl;&times;&times;&times;&frasl;_config.yml(可以安装自己喜欢的主题，  &times;&times;&times;不同主题有不同文件夹名字，这里自己找)<br><!-- </body>
+</html> --></p>
 
     
   </div>
